@@ -4,10 +4,9 @@ from sqlalchemy import event
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from ..database import db
-from .base import Base
 
 
-class User(Base):
+class User(db.Model):
     __tablename__ = 'users'
 
     id = db.Column('id', db.BigInteger, primary_key=True)
@@ -21,6 +20,10 @@ class User(Base):
                            db.TIMESTAMP,
                            onupdate=datetime.datetime.utcnow,
                            nullable=False)
+
+    def __repr__(self):
+        return "<{name} '{id}'>".format(name=self.__class__.__name__,
+                                        id=self.id)
 
 
 def encrypt_password(target, value, old_value, initiator):

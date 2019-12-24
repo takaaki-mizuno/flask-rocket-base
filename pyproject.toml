@@ -13,6 +13,7 @@ flask_cors = "^3.0.8"
 python-dotenv = "^0.10.3"
 flask_sqlalchemy = "^2.4.1"
 psycopg2 = "^2.8.4"
+flask-migrate = "^2.5.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
