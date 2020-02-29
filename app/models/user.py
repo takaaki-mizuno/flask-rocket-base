@@ -25,6 +25,21 @@ class User(db.Model):
         return "<{name} '{id}'>".format(name=self.__class__.__name__,
                                         id=self.id)
 
+    @staticmethod
+    def is_authenticated() -> bool:
+        return True
+
+    @staticmethod
+    def is_active() -> bool:
+        return True
+
+    @staticmethod
+    def is_anonymous(self) -> bool:
+        return False
+
+    def get_id(self) -> int:
+        return self.id
+
 
 def encrypt_password(target, value, old_value, initiator):
     generate_password_hash(value)

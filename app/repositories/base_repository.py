@@ -1,6 +1,4 @@
 from typing import Any, Dict, List, Union
-import uuid
-
 from flask_sqlalchemy import SQLAlchemy
 
 from ..database import db

@@ -120,6 +120,17 @@ typing = "*"
 
 [[package]]
 category = "main"
+description = "User session management for Flask"
+name = "flask-login"
+optional = false
+python-versions = "*"
+version = "0.4.1"
+
+[package.dependencies]
+Flask = "*"
+
+[[package]]
+category = "main"
 description = "SQLAlchemy database migrations for Flask applications using Alembic"
 name = "flask-migrate"
 optional = false
@@ -465,7 +476,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "4bf05cd8cdaf5fd36aceb89159ae4c527363d00775f92ecb109ddaaaf833cfc9"
+content-hash = "6d83c769aeb12fd8b9cfb655288e2aa9fa24c684916b260f1730172c49ec458c"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -507,6 +518,9 @@ flask-cors = [
 flask-injector = [
     {file = "Flask-Injector-0.12.0.tar.gz", hash = "sha256:02e64203150c1056fbff82bc181cee0474f21c0dfafe83d7de7b276d2ac66fbd"},
     {file = "Flask_Injector-0.12.0-py2.py3-none-any.whl", hash = "sha256:ca8bc72dab39e2a89855d87948c426e4541698debcdb14b808f182801d397850"},
+]
+flask-login = [
+    {file = "Flask-Login-0.4.1.tar.gz", hash = "sha256:c815c1ac7b3e35e2081685e389a665f2c74d7e077cb93cecabaea352da4752ec"},
 ]
 flask-migrate = [
     {file = "Flask-Migrate-2.5.2.tar.gz", hash = "sha256:a96ff1875a49a40bd3e8ac04fce73fdb0870b9211e6168608cbafa4eb839d502"},
