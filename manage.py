@@ -1,4 +1,5 @@
 import unittest
+import urllib.parse
 from app.bootstrap import create_app
 from app.config import Config
 from app.database import db
@@ -39,7 +40,7 @@ def list_routes():
 
         methods = ','.join(rule.methods)
         url = url_for(rule.endpoint, **options)
-        line = urllib.unquote("{:50s} {:20s} {}".format(rule.endpoint, methods, url))
+        line = urllib.parse.unquote("{:50s} {:20s} {}".format(rule.endpoint, methods, url))
         output.append(line)
 
     for line in sorted(output):

@@ -1,5 +1,7 @@
-from flask import Blueprint, redirect, request
+from flask import Blueprint, Flask, redirect, request
 
-app = Blueprint('api', __name__)
+from .controllers import user_controller
 
 
+def build_routes(app: Flask) -> None:
+    app.register_blueprint(user_controller, url_prefix='/api/users')

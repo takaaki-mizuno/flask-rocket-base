@@ -4,11 +4,11 @@ from flask_injector import FlaskInjector, request
 
 from ..config import Config
 from ..database import db, init_db
+from ..helpers import SessionHelper
 from ..repositories import UserRepository
 from ..services import UserService
-from ..helpers import SessionHelper
-from ..views.api.routes import app as api_app
-from ..views.frontend.routes import app as frontend_app
+from ..views.api.routes import build_routes as api_build_routes
+from ..views.frontend.routes import build_routes as frontend_build_routes
 
 
 def create_app(config_mode: str = 'development') -> Flask:
@@ -20,8 +20,8 @@ def create_app(config_mode: str = 'development') -> Flask:
     init_db(app)
     login_manager.init_app(app)
 
-    app.register_blueprint(api_app, url_prefix='/api/')
-    app.register_blueprint(frontend_app, url_prefix='/')
+    api_build_routes(app)
+    frontend_build_routes(app)
 
     FlaskInjector(app=app, modules=[_bind])
 

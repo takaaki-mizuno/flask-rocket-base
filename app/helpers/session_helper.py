@@ -1,5 +1,6 @@
-from ..session import login_manager
 from flask_login import LoginManager
+
+from ..session import login_manager
 
 
 class SessionHelper(object):

@@ -1,8 +1,9 @@
-from flask import Blueprint
+from flask import Flask
 
-app = Blueprint('frontend', __name__)
+from .controllers import index_controller
 
 
-@app.route('/')
-def hello():
-    return 'hello'
+def build_routes(app: Flask) -> None:
+    app.register_blueprint(index_controller,
+                           url_prefix='/',
+                           template_folder='../../templates')
