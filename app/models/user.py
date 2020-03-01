@@ -22,8 +22,7 @@ class User(db.Model):
                            nullable=False)
 
     def __repr__(self):
-        return "<{name} '{id}'>".format(name=self.__class__.__name__,
-                                        id=self.id)
+        return "<{name} '{id}'>".format(name=self.__class__.__name__, id=self.id)
 
     @staticmethod
     def is_authenticated() -> bool:

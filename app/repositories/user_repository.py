@@ -1,4 +1,4 @@
-from ..models import User
+from app.models import User
 from .base_repository import BaseRepository
 
 

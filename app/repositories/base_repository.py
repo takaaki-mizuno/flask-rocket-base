@@ -1,7 +1,5 @@
-from typing import Any, Dict, List, Union
-
+from typing import Any, Dict, List, Union, Optional
 from flask_sqlalchemy import SQLAlchemy
-
 from ..database import db
 
 
@@ -9,7 +7,7 @@ class BaseRepository(object):
     model_class = db.Model
     has_uuid = False
 
-    def __init__(self, database: SQLAlchemy) -> None:
+    def __init__(self, database: Optional[SQLAlchemy]) -> None:
         self.db = database
 
     def all(self) -> List[db.Model]:

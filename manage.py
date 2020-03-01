@@ -6,6 +6,7 @@ from app.database import db
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from flask import url_for
+import pytest
 
 app = create_app()
 migrate = Migrate(app, db)
@@ -20,12 +21,8 @@ def run():
 
 @manager.command
 def test():
-    """Runs the unit tests."""
-    tests = unittest.TestLoader().discover('tests', pattern='test*.py')
-    result = unittest.TextTestRunner(verbosity=2).run(tests)
-    if result.wasSuccessful():
-        return 0
-    return 1
+    """Runs the tests."""
+    pytest.main(["-s", "tests"])
 
 
 @manager.command

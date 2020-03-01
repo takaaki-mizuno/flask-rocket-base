@@ -1,6 +1,6 @@
 # How to setup project
 
-This project uses `pyproject.toml` proposed on [PEP-0518](https://www.python.org/dev/peps/pep-0518/#specification) instead of `requirements.txt`. And you can use [Poetry](https://python-poetry.org/). 
+This project uses `pyproject.toml` proposed on [PEP-0518](https://www.python.org/dev/peps/pep-0518/#specification) instead of `requirements.txt`. And you can use [Poetry](https://python-poetry.org/).
 
 ## 1. Setup python 3.8.x environment with `pyenv` and install Poetry
 
@@ -24,7 +24,7 @@ pip3 install poetry
 poetry install
 ```
 
-- Run server
+- Run http server
 
 ```
 poetry run python manage.py run
